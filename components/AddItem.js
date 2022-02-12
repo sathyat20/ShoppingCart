@@ -20,15 +20,15 @@ const styles = StyleSheet.create({
   input: {
       height: 60,
       padding: 10,
-      fontSize: 16,
+      fontSize: 30,
   },
   btn: {
-      backgroundColor: '#c2bad8',
+      backgroundColor: '#BF40BF',
       padding: 10,
       margin: 5,
   },
   btnText: {
-      color: 'darkslateblue',
+      color: '#fff',
       fontSize: 20,
       textAlign: 'center',
   },

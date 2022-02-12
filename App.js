@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, FlatList, Alert} from 'react-native';
+import { View, Text, StyleSheet, FlatList, Alert, ImageBackground} from 'react-native';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header';
 import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
-import { uuid } from 'uuidv4';
 
-const App = () => {
+const image = { uri: "https://reactjs.org/logo-og.png" };
+
+const App = () => { 
+
   const [items, setItems] = useState([
-    {id: uuidv4(), text: 'Milk'},
+    {id: uuidv4(), text: 'Chicken'},
+    {id: uuidv4(), text: 'Peanut Butter'},
+    {id: uuidv4(), text: 'Breadsticks'},
+    {id: uuidv4(), text: 'Duck'},
     {id: uuidv4(), text: 'Eggs'},
-    {id: uuidv4(), text: 'Bread'},
-    {id: uuidv4(), text: 'Juice'},
   ]);
 
   const deleteItem = (id) => {
@@ -40,22 +43,44 @@ const App = () => {
   };
 
   return (
+
     <View style = {styles.container}>
-      <Header title='Shopping List'/>
-      <AddItem addItem = {addItem}/>
-      <FlatList data={items} renderItem={({item}) => 
-        <ListItem item={item} deleteItem={deleteItem} />
-      }/>
+      <ImageBackground style = {styles.backgroundImage} source={require('./gradient.png')}>
+        <Header title='Shopping Cart'/>
+        <AddItem addItem = {addItem}/>
+        <FlatList data={items} renderItem={({item}) => 
+          <ListItem item={item} deleteItem={deleteItem} />
+        }/>
+      </ImageBackground>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 60,
+    backgroundColor: '#E9CCA0'
+   
   }, 
+
+  backgroundImage:{
+    width: '100%',
+    height: '100%',
+    flex: 1,
+
+    },
+
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  },
+
 });
+
+
 
 export default App;
 

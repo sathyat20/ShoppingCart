@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {ImageBackground, View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 const ListItem = ({item, deleteItem}) => {
@@ -10,14 +10,15 @@ const ListItem = ({item, deleteItem}) => {
           <Icon name="remove" size={20} color="firebrick" onPress={() => deleteItem(item.id)}/>
       </View>
     </TouchableOpacity>
+
+    
   );
 };
 
-
 const styles = StyleSheet.create({
  listItem: {
-     padding: 15,
-     backgroundColor: '#f8f8f8',
+     padding: 20,
+     backgroundColor: '#CF9FFF',
      borderBottomWidth: 1,
      borderColor: '#eee',
  },
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
  },
  listItemText: {
     fontSize: 18,
+    color: "#5D3FD3"
 },
 
 });
